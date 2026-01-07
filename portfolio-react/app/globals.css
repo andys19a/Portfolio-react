@@ -1,0 +1,530 @@
+.introruta {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* vänster | mitten | höger */
+  align-items: center;
+  gap: 18px;
+
+  padding: 22px 26px;
+  border-radius: 18px;
+
+  /* snygg “ram” utan att bli för hård */
+border: 3px solid rgba(0, 0, 0, 0.493);
+
+  /* gradient bakgrund (fungerar inte i alla webbläsare) */
+background:
+  linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)) padding-box,
+  linear-gradient(135deg, rgba(99,102,241,0.35), rgba(16,185,129,0.25)) border-box;
+
+  /* glass/kort-känsla */
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 18px 50px rgba(2, 6, 23, 0.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.introruta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 65px rgba(2, 6, 23, 0.14);
+  border-color: rgba(15, 23, 42, 0.18);
+}
+
+/* Vänster */
+.introruta .intro-text {
+  justify-self: start;
+  min-width: 220px;
+  padding-left: 6px;
+}
+
+.introruta .intro-text h1 {
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.introruta .intro-text p {
+  margin: 6px 0 0;
+  opacity: 0.8;
+}
+
+.introruta ul.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* webbutveckling | marketing */
+  gap: 18px;
+
+  justify-self: center;
+  align-items: start;
+}
+
+/* Varje grupp blir en kolumn */
+.skill-group {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* gör att rubrik och badges linjerar */
+}
+
+/* Rubriken */
+.skill-title {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 1.35;
+  text-align: center;
+}
+
+/* Inre listor */
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+/* Webbutveckling: vertikal */
+.skill-list.vertical {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Marketing: på rad */
+.skill-list.row {
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Badge */
+.skill-list > li {
+  padding: 8px 12px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  line-height: 1;
+  width: fit-content;
+}
+
+@media (max-width: 700px) {
+  .introruta ul.skills {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* Höger */
+.introruta img.profilbild {
+  justify-self: end;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  /* snygg “ring” runt bilden */
+  border: 4px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.14);
+
+  margin-right: 4px;
+}
+
+/* Mobil */
+@media (max-width: 700px) {
+  .introruta {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .introruta ul.skills {
+    justify-self: start;
+    align-items: flex-start;
+  }
+
+  .introruta img.profilbild {
+    justify-self: start;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+
+
+.projects-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 30px;
+}
+
+.mina-projekt {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 12px;
+}
+
+.project-card {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-meta {
+  padding: 12px 14px;
+}
+
+.project-meta h3 {
+  margin: 0 0 6px;
+}
+
+.project-meta p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.see-all {
+  text-decoration: none;
+}
+
+.see-all:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .mina-projekt {
+    grid-template-columns: 1fr;
+  }
+}
+
+:root {
+  --bg: #f7f8fc;
+  --text: #0b1220;
+  --muted: rgba(11, 18, 32, 0.7);
+  --card: rgba(255, 255, 255, 0.8);
+  --border: rgba(15, 23, 42, 0.10);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(800px 500px at 10% 10%, rgba(0, 0, 0, 0.06), transparent 60%),
+    radial-gradient(700px 450px at 90% 20%, rgba(0, 0, 0, 0.05), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 70%, #ffffff 100%);
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Subtilt “noise”/texture (pro känsla) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.15;
+}
+
+/* Din main som en snygg container */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(2, 6, 23, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Lite standard typografi */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+}
+
+.nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 14px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.nav-logo {
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  padding: 8px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: background 160ms ease, opacity 160ms ease, transform 160ms ease;
+}
+
+.nav-link:hover {
+  background: rgba(15, 23, 42, 0.06);
+  opacity: 1;
+}
+
+.nav-link.active {
+  background: rgba(15, 23, 42, 0.08);
+  opacity: 1;
+}
+
+/* Mobil */
+@media (max-width: 520px) {
+  .nav {
+    padding: 12px 16px;
+  }
+
+  .nav-logo {
+    display: none; /* eller minska texten istället om du vill */
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-link {
+    padding: 8px 10px;
+  }
+}
+
+.project-intro {
+  margin: 18px 0 14px;
+  text-align: center;
+}
+
+.project-intro p {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: rgba(11, 18, 32, 0.92);
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.08);
+}
+
+.gallery {
+  margin-top: 16px;
+}
+
+.gallery-layout {
+  display: grid;
+  grid-template-columns: 1fr 160px; /* huvudbild | thumbs */
+  gap: 12px;
+  align-items: start;
+}
+
+.gallery-main {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 18px 45px rgba(2, 6, 23, 0.10);
+}
+
+.gallery-thumbs-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: calc((100vw - 48px) * 9 / 16); /* ungefär samma höjd som main */
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: transform 140ms ease, opacity 140ms ease, border-color 140ms ease;
+}
+
+.thumb:hover {
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.thumb.active {
+  opacity: 1;
+  border-color: rgba(15, 23, 42, 0.30);
+}
+
+/* Mobil: thumbs under igen */
+@media (max-width: 700px) {
+  .gallery-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-thumbs-vertical {
+    flex-direction: row;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .thumb {
+    width: 120px;
+    flex: 0 0 auto;
+  }
+}
+
+
+.thumb:hover {
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.thumb.active {
+  opacity: 1;
+  border-color: rgba(15, 23, 42, 0.30);
+}
+
+@media (max-width: 700px) {
+  .thumb {
+    width: 96px;
+    height: 58px;
+  }
+}
+
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.tech-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.65);
+
+  box-shadow: 0 10px 25px rgba(2, 6, 23, 0.06);
+}
+
+.tech-icon-label {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  justify-self: center;
+}
+
+.skill-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* centerar rubrik + ikoner */
+}
+
+.skill-title {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* Om du vill ha ikonerna mer kompakta i introrutan */
+.skills-grid .tech-icon {
+  padding: 7px 10px;
+}
+.skills-grid .tech-icon-label {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill-col {
+    align-items: flex-start;
+  }
+  .skill-title {
+    text-align: left;
+  }
+}
