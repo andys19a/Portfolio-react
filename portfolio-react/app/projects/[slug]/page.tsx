@@ -15,10 +15,17 @@ export default async function ProjectPage({
 
   return (
     <>
-        <h1>{project.title}</h1>
-        <p>{project.description}</p>
-        <TechStackIcons tech={project.stack} showLabels />
-        <ProjectGallery title={project.title} images={project.images} />
+  <div className="project-page">
+    <div className="project-header">
+      <h1>{project.title}</h1>
+      <p className="project-desc">{project.description}</p>
+
+      <h3>Tech stack</h3>
+      <TechStackIcons tech={project.stack} showLabels />
+    </div>
+
+    <ProjectGallery title={project.title} images={project.images} />
+  </div>
 
     </>
   );

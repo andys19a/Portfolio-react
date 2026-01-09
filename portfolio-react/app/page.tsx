@@ -64,15 +64,17 @@ export default function Home() {
         <div className="mina-projekt">
           {projects.map((p) => (
             <Link key={p.slug} className="project-card" href={`/projects/${p.slug}`}>
-              <div className="project-image">
-                <Image
-                  src={p.image}
-                  alt={`Skärmbild av ${p.title}`}
-                  width={900}
-                  height={600}
-                  unoptimized
-                />
-              </div>
+                <div className="project-image">
+                  <Image
+                    src={p.image}
+                    alt={`Skärmbild av ${p.title}`}
+                    fill
+                    unoptimized
+                    sizes="(max-width: 700px) 100vw, 33vw"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+
               <div className="project-meta">
                 <h3>{p.title}</h3>
                 <p>{p.description}</p>
