@@ -51,7 +51,7 @@ export default function Home() {
 
         <img
           src="/Profilbild.jpeg"
-          alt="Profilbild av André Alm"
+          alt="Profilbild av André"
           className="profilbild"
         />
       </section>
