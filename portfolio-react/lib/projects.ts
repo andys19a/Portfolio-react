@@ -44,7 +44,7 @@ export const projects: Project[] = [
     short: "WordPress/Elementor-sidor med custom CSS/HTML",
     description:
       "Exempel på sidor jag arbetade med under min praktik hos Heatio. Byggt i WordPress och Elementor med custom CSS/HTML för en professionell och användarvänlig webbplats.",
-    images: ["/Startsida_Heatio.png", "/projekt3.png", "/recension karusell.png", "/jamforelse_serviceplaner.png", "/jamforelse.png"],
+    images: ["/Startsida_Heatio.png", "/projekt3.png", "/recension karusell.png", "/Jamforelse_serviceplaner.png", "/Jamforelse.png"],
     stack: ["wordpress", "elementor", "css", "html"],
   },
 ];
